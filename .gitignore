@@ -1,0 +1,8 @@
+  
+# Files
+*.user
+*.suo
+
+# Directories
+*.vs/
+*/x64/
