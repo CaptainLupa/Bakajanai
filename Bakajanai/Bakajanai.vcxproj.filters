@@ -26,5 +26,11 @@
     <ClInclude Include="headers\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\GhostTitle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\precum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
