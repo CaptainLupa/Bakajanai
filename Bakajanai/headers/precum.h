@@ -9,4 +9,9 @@
 #include <iostream>
 #include <conio.h>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <initializer_list>
+#include <algorithm>
 #include "GhostTitle.h"

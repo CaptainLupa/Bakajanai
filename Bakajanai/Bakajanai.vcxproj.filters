@@ -24,6 +24,9 @@
     <ClCompile Include="src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\Text.h">
@@ -35,5 +38,12 @@
     <ClInclude Include="headers\precum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\shaders\main.vert" />
+    <None Include="src\shaders\main.frag" />
   </ItemGroup>
 </Project>
