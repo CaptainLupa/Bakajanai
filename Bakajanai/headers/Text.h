@@ -67,4 +67,22 @@ namespace Baka {
 		const char* m_message;
 		BakaColors m_color;
 	};
+
+	void clearScreen(char fill = ' ') {
+		COORD tl = { 0,0 };
+		CONSOLE_SCREEN_BUFFER_INFO s;
+		HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+		GetConsoleScreenBufferInfo(console, &s);
+		DWORD written, cells = s.dwSize.X * s.dwSize.Y;
+		FillConsoleOutputCharacter(console, fill, cells, tl, &written);
+		FillConsoleOutputAttribute(console, s.wAttributes, cells, tl, &written);
+		SetConsoleCursorPosition(console, tl);
+	}
+
+	void resizeScreen(int W = 1920, int H = 1080) {
+		HWND console = GetConsoleWindow();
+		RECT r;
+		GetWindowRect(console, &r);
+		MoveWindow(console, r.left, r.top, W, H, TRUE);
+	}
 }
