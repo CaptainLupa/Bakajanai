@@ -85,7 +85,7 @@ namespace Baka {
 	}
 
 	void Shader::setFloat(const std::string& name, float value) const {
-		glUniform1f(glGetUniformLocation(ID, name.c_str()), value);	
+		glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 	}
 
 	void Shader::setFloat4(const std::string& name, std::vector<float> value) {
@@ -93,6 +93,14 @@ namespace Baka {
 			std::cout << "ERROR::FLOAT_VECTOR_VALUE_TOO_HIGH\nsetFloat4(" << name << ", vector of size " << value.size() << ")\nProgram ID: " << ID << std::endl;
 		} else {
 			glUniform4f(glGetUniformLocation(ID, name.c_str()), value[0], value[1], value[2], value[3]);
+		}
+	}
+
+	void Shader::setFloat3(const std::string& name, std::vector<float> value) {
+		if (value.size() > 3) {
+			std::cout << "ERROR::FLOAT_VECTOR_VALUE_TOO_HIGH\nsetFloat3(" << name << ", vector of size " << value.size() << ")\nProgram ID: " << ID << std::endl;
+		} else {
+			glUniform3f(glGetUniformLocation(ID, name.c_str()), value[0], value[1], value[2]);
 		}
 	}
 }

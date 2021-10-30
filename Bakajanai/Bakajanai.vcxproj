@@ -30,27 +30,27 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -72,22 +72,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\;</IncludePath>
+    <IncludePath>D:\OpenGL334dirs\stb\;$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\</IncludePath>
     <LibraryPath>$(LibraryPath);D:\OpenGL334dirs\lib\</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\;</IncludePath>
+    <IncludePath>D:\OpenGL334dirs\stb\;$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\</IncludePath>
     <LibraryPath>$(LibraryPath);D:\OpenGL334dirs\lib\</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\;</IncludePath>
+    <IncludePath>D:\OpenGL334dirs\stb\;$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\</IncludePath>
     <LibraryPath>$(LibraryPath);D:\OpenGL334dirs\lib\</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\;</IncludePath>
+    <IncludePath>D:\OpenGL334dirs\stb\;$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenGL334dirs\include\;D:\OpenGl334dirs\glad\include\</IncludePath>
     <LibraryPath>$(LibraryPath);D:\OpenGL334dirs\lib\</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -159,20 +159,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="headers\stbpain.c" />
     <ClCompile Include="src\glad.c" />
+    <ClCompile Include="src\PolygonObject.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Source.cpp" />
-    <ClCompile Include="src\Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\GhostTitle.h" />
-    <ClInclude Include="headers\precum.h" />
+    <ClInclude Include="headers\PolygonObject.h" />
+    <ClInclude Include="headers\precomp.h" />
     <ClInclude Include="headers\Shader.h" />
     <ClInclude Include="headers\Text.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\shaders\main.frag" />
     <None Include="src\shaders\main.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\Cutie.png" />
+    <Image Include="images\veggie.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

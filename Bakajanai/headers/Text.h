@@ -14,7 +14,7 @@
 //14 : Yellow
 //15 : Bright white
 
-#include "precum.h"
+#include "precomp.h"
 
 namespace Baka {
 	enum class BakaColors {
@@ -28,6 +28,7 @@ namespace Baka {
 		GRAY,
 		BRIGHT_BLUE,
 		BRIGHT_GREEN,
+		BRIGHT_CYAN,
 		BRIGHT_RED,
 		PINK,
 		YELLOW,
@@ -41,6 +42,9 @@ namespace Baka {
 		BakaText(): m_message(""), m_color(WHITE) { }
 
 		BakaText(const char* message, BakaColors color): m_message(message), m_color(color) { }
+		BakaText(float message, BakaColors color): m_color(color) {
+			m_message = std::to_string(message);
+		}
 
 		void setColor(BakaColors color = WHITE) {
 			m_color = color;
@@ -64,7 +68,7 @@ namespace Baka {
 		}
 
 	private:
-		const char* m_message;
+		std::string m_message;
 		BakaColors m_color;
 	};
 

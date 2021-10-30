@@ -3,7 +3,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include "precum.h"
+#include "precomp.h"
 
 namespace Baka {
 	class Shader {
@@ -18,6 +18,7 @@ namespace Baka {
 		void setInt(const std::string& name, int value) const;
 		void setFloat(const std::string& name, float value) const;
 		void setFloat4(const std::string& name, std::vector<float> value);
+		void setFloat3(const std::string& name, std::vector<float> value);
 	};
 }
 
