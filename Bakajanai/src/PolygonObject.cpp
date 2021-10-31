@@ -44,7 +44,7 @@ namespace Baka {
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
-
+	
 	/// <summary>
 	/// Creates a Square object with color and texture.  Uses EBO so only 4 vertices required.
 	/// </summary>
@@ -68,7 +68,7 @@ namespace Baka {
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); // DO NOT UNBIND WHEN DRAWING!!!!!!
 		glBindVertexArray(0);
 	}
-
+	
 	void Square::enable() {
 		glBindVertexArray(VAO);
 		//glBindBuffer(GL_ARRAY_BUFFER, VBO);

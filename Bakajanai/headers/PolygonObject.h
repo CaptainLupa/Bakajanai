@@ -8,9 +8,15 @@ namespace Baka {
 	class Polygon {
 	protected:
 		unsigned int VAO, VBO, EBO;
+
+	public:
+		virtual void draw() = 0;
+
+		virtual void enable() = 0;
+		virtual void disable() = 0;
 	};
 	
-	class Triangle: protected Polygon {
+	class Triangle: Polygon {
 	public:
 		//unsigned int VAO, VBO;
 
@@ -25,7 +31,7 @@ namespace Baka {
 		void disable();
 	};
 
-	class Square: protected Polygon {
+	class Square: Polygon {
 	public:
 		// unsigned int VAO, VBO, EBO;
 
