@@ -72,8 +72,56 @@ namespace Baka {
 		glDeleteShader(fragment);
 	}
 
+	/// <summary>
+	/// creates a texture and adds it to the texture vector.
+	/// </summary>
+	/// <param name="imagePath">Path to texture image</param>
+	/// <param name="extension">Defaults to ".png", set to ".jpg" etc</param>
+	void Shader::createTexture(const std::string& imagePath, const std::string& extension) {
+		GLint colorType = (extension == ".png" ? GL_RGBA : GL_RGB);
+		std::string wtf = "images/";
+		wtf.append(imagePath);
+
+		unsigned int texture;
+		glGenTextures(1, &texture);
+		glBindTexture(GL_TEXTURE_2D, texture);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		int width, height, channels;
+		unsigned char* data = stbi_load(wtf.c_str(), &width, &height, &channels, 0);
+
+		if (data) {
+			glTexImage2D(GL_TEXTURE_2D, 0, colorType, width, height, 0, colorType, GL_UNSIGNED_BYTE, data);
+			glGenerateMipmap(GL_TEXTURE_2D);
+		} else {
+			std::cout << Baka::BakaText("Failed to load image " + imagePath + ".", BakaColors::RED);
+		}
+		stbi_image_free(data);
+
+		textures.push_back(texture);
+
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
+
+	void Shader::setActiveTextureUnit(short pos = 0) {
+		glActiveTexture(GL_TEXTURE0 + pos);
+	}
+
+	void Shader::useTexture(short pos = 0) {
+		glBindTexture(GL_TEXTURE_2D, textures[pos]);
+	}
+
 	void Shader::use() {
 		glUseProgram(ID);
+	}
+
+	void Shader::suspend() {
+		glUseProgram(0);
 	}
 
 	void Shader::setBool(const std::string& name, bool value) const {

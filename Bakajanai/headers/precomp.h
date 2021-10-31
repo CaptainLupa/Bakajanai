@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef PRECOMP_H
+#define PRECOMP_H
+
 #define _WIN32_WINNT 0x0500
 //#define STB_IMAGE_IMPLEMENTATION
 
@@ -18,4 +21,5 @@
 #include <vector>
 #include <initializer_list>
 #include <algorithm>
-#include "GhostTitle.h"
+
+#endif

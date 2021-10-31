@@ -1,3 +1,4 @@
+#pragma once
 //1: Blue
 //2 : Green
 //3 : Cyan
@@ -13,6 +14,11 @@
 //13 : Pink / Magenta
 //14 : Yellow
 //15 : Bright white
+
+#ifndef TEXT_H
+#define TEXT_H
+
+
 
 #include "precomp.h"
 
@@ -42,6 +48,7 @@ namespace Baka {
 		BakaText(): m_message(""), m_color(WHITE) { }
 
 		BakaText(const char* message, BakaColors color): m_message(message), m_color(color) { }
+		BakaText(const std::string& message, BakaColors color) : m_message(message), m_color(color) {}
 		BakaText(float message, BakaColors color): m_color(color) {
 			m_message = std::to_string(message);
 		}
@@ -71,22 +78,6 @@ namespace Baka {
 		std::string m_message;
 		BakaColors m_color;
 	};
-
-	void clearScreen(char fill = ' ') {
-		COORD tl = { 0,0 };
-		CONSOLE_SCREEN_BUFFER_INFO s;
-		HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
-		GetConsoleScreenBufferInfo(console, &s);
-		DWORD written, cells = s.dwSize.X * s.dwSize.Y;
-		FillConsoleOutputCharacter(console, fill, cells, tl, &written);
-		FillConsoleOutputAttribute(console, s.wAttributes, cells, tl, &written);
-		SetConsoleCursorPosition(console, tl);
-	}
-
-	void resizeScreen(int W = 1920, int H = 1080) {
-		HWND console = GetConsoleWindow();
-		RECT r;
-		GetWindowRect(console, &r);
-		MoveWindow(console, r.left, r.top, W, H, TRUE);
-	}
 }
+
+#endif

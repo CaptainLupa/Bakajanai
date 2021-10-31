@@ -1,20 +1,31 @@
 #pragma once
 
+#ifndef POLYGONOBJECT_H
+#define POLYGONOBJECT_H
+
 #include "precomp.h"
+#include "Text.h"
 
 namespace Baka {
-	// TODO: Add Texture class of some sort
 
 	class Polygon {
 	protected:
 		unsigned int VAO, VBO, EBO;
 
 	public:
+		Polygon() : VAO(0), VBO(0), EBO(0) {}
+
+		virtual void setColorAttrib(unsigned int pos, int num, int stride, int offset) = 0;
+
 		virtual void draw() = 0;
 
 		virtual void enable() = 0;
 		virtual void disable() = 0;
 	};
+
+
+
+
 	
 	class Triangle: Polygon {
 	public:
@@ -51,3 +62,5 @@ namespace Baka {
 		return sizeof(T) * vec.size();
 	}
 }
+
+#endif
