@@ -50,3 +50,5 @@ Using Two VBOs and VAOs to draw 2 triangles
 	glEnableVertexAttribArray(0);
 
 	// ***** Must do the AttribPointer and Enable for each object! ***** //
+
+# Test from Mac
