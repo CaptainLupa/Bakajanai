@@ -77,7 +77,9 @@ namespace Baka {
 	/// </summary>
 	/// <param name="imagePath">Path to texture image</param>
 	/// <param name="extension">Defaults to ".png", set to ".jpg" etc</param>
-	void Shader::createTexture(const std::string& imagePath, const std::string& extension) {
+	void Shader::createTexture(const std::string& imagePath, const std::string& extension, bool flip) {
+		stbi_set_flip_vertically_on_load(flip);
+
 		GLint colorType = (extension == ".png" ? GL_RGBA : GL_RGB);
 		std::string wtf = "images/";
 		wtf.append(imagePath);

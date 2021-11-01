@@ -27,7 +27,7 @@
     <ClCompile Include="src\PolygonObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="headers\stbpain.c">
+    <ClCompile Include="headers\Util\stbpain.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,10 +35,10 @@
     <ClInclude Include="headers\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\GhostTitle.h">
+    <ClInclude Include="headers\Util\GhostTitle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\precomp.h">
+    <ClInclude Include="headers\Util\precomp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\Shader.h">

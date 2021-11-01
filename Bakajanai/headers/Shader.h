@@ -14,7 +14,7 @@ namespace Baka {
 
 		Shader(const char* vertexPath, const char* fragmentPath);
 
-		void createTexture(const std::string& imagePath, const std::string& extension = ".png");
+		void createTexture(const std::string& imagePath, const std::string& extension = ".png", bool flip = true);
 		void setActiveTextureUnit(short pos);
 		void useTexture(short pos);
 

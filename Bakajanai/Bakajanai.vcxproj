@@ -96,7 +96,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;$(SolutionDir)Bakajanai\headers\Util;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -113,7 +113,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;$(SolutionDir)Bakajanai\headers\Util;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;$(SolutionDir)Bakajanai\headers\Util;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -147,7 +147,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Bakajanai\headers;$(SolutionDir)Bakajanai\headers\spdlog\include;$(SolutionDir)Bakajanai\headers\Util;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -159,16 +159,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="headers\stbpain.c" />
+    <ClCompile Include="headers\Util\stbpain.c" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\PolygonObject.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\GhostTitle.h" />
+    <ClInclude Include="headers\Util\GhostTitle.h" />
     <ClInclude Include="headers\PolygonObject.h" />
-    <ClInclude Include="headers\precomp.h" />
+    <ClInclude Include="headers\Util\precomp.h" />
     <ClInclude Include="headers\Shader.h" />
     <ClInclude Include="headers\Text.h" />
   </ItemGroup>

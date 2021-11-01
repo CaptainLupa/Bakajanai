@@ -68,9 +68,6 @@ int main(void) {
 		return -1;
 	}
 
-
-	stbi_set_flip_vertically_on_load(true);
-
 	std::vector<float> vertices({
 		// positions          // colors           // texture coords
 		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
@@ -80,8 +77,6 @@ int main(void) {
 	});
 
 	std::vector<unsigned int> indices({ 0, 1, 3, 1, 2, 3 });
-
-	
 
 	Baka::Square sq(vertices, indices, 8);
 	sq.setColorAttrib(1, 3, 8, 3);
@@ -108,19 +103,11 @@ int main(void) {
 		glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		
-
 		float t = glfwGetTime();
 		
 		x += xVel;
 		y += yVel;
 
-		/*r = abs(x);
-		g = abs(y);
-		b = abs(x);*/
-
-		//std::cout << Baka::BakaText("x: ", Baka::BakaColors::YELLOW) << Baka::BakaText(x, Baka::BakaColors::YELLOW) << std::endl;
-		//std::cout << Baka::BakaText("y: ", Baka::BakaColors::YELLOW) << Baka::BakaText(y, Baka::BakaColors::YELLOW) << std::endl;
 		myShader.use();
 		myShader.useTexture(0);
 		myShader.setActiveTextureUnit(1);
