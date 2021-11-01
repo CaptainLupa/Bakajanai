@@ -1,19 +1,4 @@
 #pragma once
-//1: Blue
-//2 : Green
-//3 : Cyan
-//4 : Red
-//5 : Purple
-//6 : Yellow(Dark)
-//7 : Default white
-//8 : Gray / Grey
-//9 : Bright blue
-//10 : Brigth green
-//11 : Bright cyan
-//12 : Bright red
-//13 : Pink / Magenta
-//14 : Yellow
-//15 : Bright white
 
 #ifndef TEXT_H
 #define TEXT_H
@@ -72,6 +57,24 @@ namespace Baka {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (int)bt.m_color);
 			os << bt.m_message;
 			return os;
+		}
+
+		static void clearScreen(char fill = ' ') {
+			COORD tl = { 0,0 };
+			CONSOLE_SCREEN_BUFFER_INFO s;
+			HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+			GetConsoleScreenBufferInfo(console, &s);
+			DWORD written, cells = s.dwSize.X * s.dwSize.Y;
+			FillConsoleOutputCharacter(console, fill, cells, tl, &written);
+			FillConsoleOutputAttribute(console, s.wAttributes, cells, tl, &written);
+			SetConsoleCursorPosition(console, tl);
+		}
+
+		static void resizeScreen(int W = 1920, int H = 1080) {
+			HWND console = GetConsoleWindow();
+			RECT r;
+			GetWindowRect(console, &r);
+			MoveWindow(console, r.left, r.top, W, H, TRUE);
 		}
 
 	private:

@@ -4,9 +4,11 @@
 
 ### https://www.learnopengl.com
 
-Basic form for doing VBO, VAO, and EBO
+# Basic form for doing VBO, VAO, and EBO
 
-	// Create Vertex Array Object, Vertex Buffer Object and Element Buffer Object
+	
+```cpp
+// Create Vertex Array Object, Vertex Buffer Object and Element Buffer Object
 	unsigned int VAO, VBO, EBO;
 	glGenBuffers(1, &VBO);
 	glGenBuffers(1, &EBO);
@@ -28,12 +30,13 @@ Basic form for doing VBO, VAO, and EBO
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 	// ***** Unbind Vertex Array Last ***** //
+```
 
+# Using Two VBOs and VAOs to draw 2 triangles
 
-
-Using Two VBOs and VAOs to draw 2 triangles
-
-	unsigned int VBOs[2], VAOs[2];
+	
+```cpp
+unsigned int VBOs[2], VAOs[2];
 	glGenVertexArrays(2, VAOs);
 	glGenBuffers(2, VBOs);
 
@@ -50,3 +53,6 @@ Using Two VBOs and VAOs to draw 2 triangles
 	glEnableVertexAttribArray(0);
 
 	// ***** Must do the AttribPointer and Enable for each object! ***** //
+```
+## Transformations, Vectors, Matracies and other cool shit with math.
+

@@ -2,25 +2,13 @@
 #include "PolygonObject.h"
 #include "Shader.h"
 #include "Text.h"
+#include "GlfwUtilFunctions.h"
 
 bool wireFrameEnabled = false;
 bool titleChanged = false;
 
 unsigned int SCR_W = 800, SCR_H = 600;
 float swagVariable = 0.0f;
-
-void framebufferSizeCallback(GLFWwindow* window, int width, int height) {
-	glViewport(0, 0, width, height);
-}
-
-void windowSizeCallback(GLFWwindow* window, int width, int height) {
-	glfwSetWindowSize(window, width, height);
-}
-
-template<typename T>
-unsigned int sizeOfVec(const std::vector<T>& vec) {
-	return sizeof(T) * vec.size();
-}
 
 void processInput(GLFWwindow* window) {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
@@ -58,8 +46,6 @@ int main(void) {
 
 	glfwMakeContextCurrent(window);
 
-	//glfwSwapInterval(16);
-
 	glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
 	glfwSetWindowSizeCallback(window, windowSizeCallback);
 
@@ -92,7 +78,6 @@ int main(void) {
 	myShader.setInt("texture2", 1);
 	myShader.suspend();
 
-	float r, g, b;
 	float x = 0.0f, y = 0.0f;
 	float xVel = 0.016f, yVel = -0.018f;
 
@@ -119,16 +104,12 @@ int main(void) {
 		if (y > 0.5 or y < -0.5)
 			yVel = -yVel;
 
-		
-
 		myShader.setFloat("time", t);
 
 		myShader.setFloat("coom", swagVariable);
 
 		myShader.setFloat("hOffset", x);
 		myShader.setFloat("vOffset", y);
-
-		//myShader.setFloat4("c", std::vector<float>({ r, g, b, 1.0f}));
 
 		sq.enable();
 		sq.draw();

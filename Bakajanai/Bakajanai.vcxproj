@@ -160,7 +160,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="headers\Util\stbpain.c" />
-    <ClCompile Include="src\glad.c" />
+    <ClCompile Include="headers\Util\glad.c" />
     <ClCompile Include="src\PolygonObject.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Source.cpp" />
@@ -168,6 +168,7 @@
   <ItemGroup>
     <ClInclude Include="headers\Util\GhostTitle.h" />
     <ClInclude Include="headers\PolygonObject.h" />
+    <ClInclude Include="headers\Util\GlfwUtilFunctions.h" />
     <ClInclude Include="headers\Util\precomp.h" />
     <ClInclude Include="headers\Shader.h" />
     <ClInclude Include="headers\Text.h" />
