@@ -3,6 +3,7 @@
 *.user
 *.suo
 *.vcxproj
+*.vcxproj.filters
 
 # Directories
 *.vs/
